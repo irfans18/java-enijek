@@ -39,4 +39,14 @@ public class EnijekUtils {
         MDistanceRepo repo = new MDistanceRepoImpl(em);
         return repo.findAll().get(randomNumber);
     }
+
+    public static MDistance getDistance(){
+        // Create a Random object
+        Random random = new Random();
+
+        // Generate a random integer between 0 and 1
+        int distance = random.nextInt(100);
+        int price = distance/5 * 2000;
+        return new MDistance(distance, (long) price);
+    }
 }

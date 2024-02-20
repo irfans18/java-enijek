@@ -22,7 +22,7 @@ public class OrderDetailRepoImpl implements OrderDetailRepo {
         MCustomer customer = customerRepo.findByName(request.getCustomerName());
         MDriver driver = EnijekUtils.getDriver(em);
         TOrder order = new TOrder(customer);
-        MDistance radius = EnijekUtils.getRadius(em);
+        MDistance radius = EnijekUtils.getDistance();
         TOrderDetail orderDetail = new TOrderDetail(request.getEntry_point(), request.getEnd_point(), order, driver, radius);
         em.persist(orderDetail);
         em.getTransaction().commit();

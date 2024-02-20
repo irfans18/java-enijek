@@ -22,6 +22,11 @@ public class MDistance {
     public MDistance() {
     }
 
+    public MDistance(Integer distance, Long price) {
+        this.distance = distance;
+        this.price = price;
+    }
+
     public Integer getId() {
         return id;
     }
