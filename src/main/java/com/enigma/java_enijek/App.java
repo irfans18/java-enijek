@@ -1,5 +1,6 @@
 package com.enigma.java_enijek;
 
+import com.enigma.java_enijek.dto.response.DriverRevenueResponse;
 import com.enigma.java_enijek.dto.response.OrderDetailResponse;
 import com.enigma.java_enijek.entity.TOrderDetail;
 import com.enigma.java_enijek.repository.OrderDetailRepository;
@@ -20,6 +21,20 @@ public class App {
         /*List<OrderDetailResponse> responseList = repository.findAll();
         System.out.println(responseList);*/
 
+        nomorDua(repository);
+
+        nomorEmpat(repository);
+
+        em.close();
+        JpaUtil.shutdown();
+
+    }
+
+    private static void nomorEmpat(OrderDetailRepository repository) {
+        System.out.println(repository.findDriverRevenue());
+    }
+
+    private static void nomorDua(OrderDetailRepository repository) {
         List<TOrderDetail> list = repository.findOrderDetail();
         for (TOrderDetail detail : list) {
             System.out.println("=".repeat(100));
@@ -39,9 +54,5 @@ public class App {
             System.out.println("End Point: " + detail.getEndPoint());
             System.out.println("=".repeat(100) + "\n");
         }
-
-        em.close();
-        JpaUtil.shutdown();
-
     }
 }
