@@ -16,7 +16,7 @@ public class MDistance {
     private Integer distance;
     @Column(name = "price")
     private Long price;
-    @OneToMany(mappedBy = "mDistanceByRadiusId")
+    @OneToMany(mappedBy = "mDistanceByRadiusId",cascade = {CascadeType.PERSIST})
     private Collection<TOrderDetail> tOrderDetailsById;
 
     public MDistance() {

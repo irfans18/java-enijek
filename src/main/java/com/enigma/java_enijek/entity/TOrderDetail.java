@@ -15,17 +15,25 @@ public class TOrderDetail {
     private String entryPoint;
     @Column(name = "end_point")
     private String endPoint;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     private TOrder tOrderByOrderId;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "driver_id", referencedColumnName = "id")
     private MDriver mDriverByDriverId;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "radius_id", referencedColumnName = "id")
     private MDistance mDistanceByRadiusId;
 
     public TOrderDetail() {
+    }
+
+    public TOrderDetail(String entryPoint, String endPoint, TOrder tOrderByOrderId, MDriver mDriverByDriverId, MDistance mDistanceByRadiusId) {
+        this.entryPoint = entryPoint;
+        this.endPoint = endPoint;
+        this.tOrderByOrderId = tOrderByOrderId;
+        this.mDriverByDriverId = mDriverByDriverId;
+        this.mDistanceByRadiusId = mDistanceByRadiusId;
     }
 
     public Integer getId() {

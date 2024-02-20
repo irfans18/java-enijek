@@ -24,7 +24,7 @@ public class MDriver {
     @Basic
     @Column(name = "phone_number")
     private String phoneNumber;
-    @OneToMany(mappedBy = "mDriverByDriverId")
+    @OneToMany(mappedBy = "mDriverByDriverId",cascade = {CascadeType.PERSIST})
     private Collection<TOrderDetail> tOrderDetailsById;
 
     public MDriver() {

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Table(name = "t_order", schema = "public", catalog = "db_enijek")
@@ -15,10 +14,10 @@ public class TOrder {
     private Integer id;
     @Column(name = "date")
     private Date date;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private MCustomer mCustomerByCustomerId;
-    @OneToMany(mappedBy = "tOrderByOrderId")
+    @OneToMany(mappedBy = "tOrderByOrderId",cascade = {CascadeType.PERSIST})
     private Collection<TOrderDetail> tOrderDetailsById;
 
     public TOrder() {
@@ -26,6 +25,11 @@ public class TOrder {
 
     public TOrder(Date date) {
         this.date = date;
+    }
+
+    public TOrder(MCustomer mCustomerByCustomerId) {
+        this.date = new Date(System.currentTimeMillis());
+        this.mCustomerByCustomerId = mCustomerByCustomerId;
     }
 
     public TOrder(Date date, MCustomer mCustomerByCustomerId) {

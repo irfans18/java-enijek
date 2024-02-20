@@ -18,7 +18,7 @@ public class MCustomer {
     private String phoneNumber;
     @Column(name = "address")
     private String address;
-    @OneToMany(mappedBy = "mCustomerByCustomerId")
+    @OneToMany(mappedBy = "mCustomerByCustomerId", cascade = {CascadeType.PERSIST})
     private Collection<TOrder> tOrdersById;
 
     public MCustomer() {

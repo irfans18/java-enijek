@@ -1,6 +1,7 @@
 package com.enigma.java_enijek;
 
 import com.enigma.java_enijek.util.JpaUtil;
+import com.enigma.java_enijek.view.OrderVIew;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -9,6 +10,9 @@ import jakarta.persistence.EntityManagerFactory;
 public class App {
     public static void main(String[] args) {
         EntityManager em = JpaUtil.getEntityManager();
+
+        OrderVIew orderVIew = new OrderVIew(em);
+        orderVIew.get();
 
         em.close();
         JpaUtil.shutdown();
