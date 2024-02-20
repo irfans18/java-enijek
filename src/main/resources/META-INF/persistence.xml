@@ -1,0 +1,47 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="jpa.enijek">
+        <class>com.enigma.java_enijek.entity.MCustomer</class>
+        <class>com.enigma.java_enijek.entity.MDistance</class>
+        <class>com.enigma.java_enijek.entity.MDriver</class>
+        <class>com.enigma.java_enijek.entity.TOrder</class>
+        <class>com.enigma.java_enijek.entity.TOrderDetail</class>
+
+
+        <properties>
+            <!-- Database connection settings -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/db_enijek" />
+            <property name="jakarta.persistence.jdbc.user" value="postgres" />
+            <property name="jakarta.persistence.jdbc.password" value="root" />
+
+            <!-- Echo all executed SQL to console -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.highlight_sql" value="true" />
+            <property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/db_enijek"/>
+            <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="toplink.jdbc.user" value="postgres"/>
+            <property name="toplink.jdbc.password" value="root"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/db_enijek"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.username" value="postgres"/>
+            <property name="hibernate.connection.password" value="root"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/db_enijek"/>
+            <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>
+            <property name="openjpa.ConnectionUserName" value="postgres"/>
+            <property name="openjpa.ConnectionPassword" value="root"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/db_enijek"/>
+            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="eclipselink.jdbc.user" value="postgres"/>
+            <property name="eclipselink.jdbc.password" value="root"/>
+
+
+        </properties>
+
+
+    </persistence-unit>
+
+</persistence>
