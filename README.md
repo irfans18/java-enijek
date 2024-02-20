@@ -11,6 +11,7 @@ Buat Menu Sebagai Berikut
 3. ⁠ ⁠Tampilkan Total Transaksi pada hari ini (jumlah order)
 4. ⁠ ⁠Tampilkan Total Pendapatan yang diperoleh masing-masing driver di semua hari.
 
+
 Note :
 1. ⁠ ⁠2 data detail -> Tambah dengan localDate -> jarak dan driver pada detail di isi by sistem
 2. ⁠ ⁠Tampilkan semua relasi detail order
