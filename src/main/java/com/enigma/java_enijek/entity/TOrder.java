@@ -66,4 +66,14 @@ public class TOrder {
     public void settOrderDetailsById(Collection<TOrderDetail> tOrderDetailsById) {
         this.tOrderDetailsById = tOrderDetailsById;
     }
+
+    @Override
+    public String toString() {
+        return "TOrder{" +
+                "id=" + id +
+                ", date=" + date +
+                ", mCustomerByCustomerId=" + mCustomerByCustomerId +
+                ", tOrderDetailsById=" + tOrderDetailsById +
+                '}';
+    }
 }

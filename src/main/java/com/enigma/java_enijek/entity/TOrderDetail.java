@@ -2,7 +2,6 @@ package com.enigma.java_enijek.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
 
 @Entity
 @Table(name = "t_order_detail", schema = "public", catalog = "db_enijek")

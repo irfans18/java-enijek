@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="jpa.enijek" value="9f97ae75-a8f8-4d91-b69b-62ed5d1d204f" />
+          <factory-entry name="jpa.enijek" value="0f976ce7-c80e-41a6-b703-eb55a08bfd50" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
